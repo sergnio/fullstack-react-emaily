@@ -16,6 +16,7 @@ passport.deserializeUser((id, done) => {
 });
 
 passport.use(
+  // set default params for googl OAuth
   new GoogleStrategy(
     {
       clientID: keys.googleClientID,
@@ -24,14 +25,17 @@ passport.use(
       proxy: true
     },
     (accessToken, refreshToken, profile, done) => {
+      // if google already exists in the DB
       User.findOne({ googleID: profile.id }).then(existingUser => {
         // we already have a record with the given profile ID
         if (existingUser) {
           // we don't already have a record - create new record
           done(null, existingUser);
         } else {
+          // create a new user and save it into the DB
           new User({ googleID: profile.id })
             .save()
+            // no errors occured
             .then(user => done(null, user));
         }
       });
