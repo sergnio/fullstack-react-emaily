@@ -18,7 +18,8 @@ const Landing = () => <h2>Landing</h2>;
 //NOTE: BrowserRouter can only have at most ONE child
 const App = () => {
   return (
-    <div>
+    <div className="container">
+      {/* ^ matCSS assumes there's a container on the base element of the app */}
       <BrowserRouter>
         <div>
           {/* This is a simple way to include a component on every page */}
