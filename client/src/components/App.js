@@ -8,8 +8,9 @@ import React from 'react';
 // Route - set up a rule between certain route and set of components that will be actually visible on the screen
 import { BrowserRouter, Route } from 'react-router-dom';
 
+import Header from './Header';
+
 //Dummy components
-const Header = () => <h2>Header</h2>;
 const Dashboard = () => <h2>Dashboard</h2>;
 const SurveyNew = () => <h2>SurveyNew</h2>;
 const Landing = () => <h2>Landing</h2>;
