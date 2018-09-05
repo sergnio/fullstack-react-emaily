@@ -20,10 +20,13 @@ const App = () => {
     <div>
       <BrowserRouter>
         <div>
+          {/* This is a simple way to include a component on every page */}
+          <Header />
           {/* ReactRouter checks these paths every single time the DOM is loaded */}
           {/* exact: attribute to match EXACTLY the path specified */}
           <Route exact path="/" component={Landing} />
-          <Route path="/surveys" component={Dashboard} />
+          <Route exact path="/surveys" component={Dashboard} />
+          <Route exact path="/surveys/new" component={SurveyNew} />
         </div>
       </BrowserRouter>
     </div>
