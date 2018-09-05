@@ -20,7 +20,9 @@ const App = () => {
     <div>
       <BrowserRouter>
         <div>
-          <Route path="/" component={Landing} />
+          {/* ReactRouter checks these paths every single time the DOM is loaded */}
+          {/* exact: attribute to match EXACTLY the path specified */}
+          <Route exact path="/" component={Landing} />
           <Route path="/surveys" component={Dashboard} />
         </div>
       </BrowserRouter>
