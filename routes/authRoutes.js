@@ -20,7 +20,8 @@ module.exports = app => {
 
   // if user accesses this URI
   app.get('/api/current_user', (req, res) => {
-    // Simply send back the User object cookie (contains id, googleID, and _v)
+    // Sends back the model of the user signed in
+    // User object cookie (contains id, googleID, and _v)
     res.send(req.user);
   });
 };
