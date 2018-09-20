@@ -6,3 +6,4 @@ const fetchUser = () => {
     // NOTE: make sure a proxy exists for the local environment, since we have two separate servers
     axios.get('/api/current_user');
 }
+// testing new automatic integration
